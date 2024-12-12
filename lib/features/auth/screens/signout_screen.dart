@@ -61,7 +61,12 @@ class SignoutScreen extends StatelessWidget {
               Container(
                 height: 20,
               ),
-              TextButton(onPressed: context.read<AuthCubit>().signout, child: const Text('Выйти'))
+              TextButton(
+                  onPressed: () {
+                    context.read<AuthCubit>().signout;
+                    context.go(SigninScreen.path);
+                  },
+                  child: const Text('Выйти'))
             ],
           ),
         ),
