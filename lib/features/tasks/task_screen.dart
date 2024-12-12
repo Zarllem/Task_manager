@@ -43,7 +43,7 @@ class TaskScreen extends StatelessWidget {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (state.list != null && state.error == null) {
+          } else if (state.list!.isNotEmpty && state.error == null) {
             return ListView.builder(
               itemCount: state.list!.length,
               itemBuilder: (context, index) {

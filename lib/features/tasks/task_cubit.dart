@@ -14,7 +14,7 @@ class TaskCubit extends Cubit<TaskState> {
   Future<void> fetchTask({bool withRel = true}) async {
     emit(state.copyWith(isLoading: withRel));
     _taskRepository.getTasks().listen((task) {
-      emit(state.copyWith(isLoading: false, list: task.isEmpty ? null : task));
+      emit(state.copyWith(isLoading: false, list: task));
     }, onError: (e) {
       emit(state.copyWith(isLoading: false, error: e.toString()));
     });

@@ -49,7 +49,7 @@ class SignoutScreen extends StatelessWidget {
               ),
               BlocBuilder<TaskCubit, TaskState>(
                 builder: (context, state) {
-                  return state.list == null
+                  return state.list!.isEmpty
                       ? const Text('У вас нет задач')
                       : state.list!.length == 1
                           ? const Text('У вас: 1 задача')
